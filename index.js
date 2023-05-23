@@ -9,10 +9,10 @@ class Svg{
         this.shapeElement = '';
     }
     render(){
-        return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="200">${this.textElement}${this.shapeElement}</svg>`;
+        return `<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="300" height="200">${this.shapeElement}${this.textElement}</svg>`;
     }
     setTextElement(text, color){
-        this.textElement = '<text x="150" y="125" font-size="60" text-anchor="middle" fill="${color}">${text}</text>';
+        this.textElement = `<text x="150" y="125" font-size="50" text-anchor="middle" fill="${color}">${text}</text>`;
     }
     setShapeElement(shape){
         this.shapeElement = shape.render();
@@ -72,7 +72,7 @@ async function init() {
     console.log('User text: [' + user_text + ']');
     user_font_color = answers['text-color'];
     console.log('User font color: [' + user_font_color + ']');
-    user_shape_color = answers['shape'];
+    user_shape_color = answers.shape;
     console.log('User shape color: [' + user_shape_color + ']');
     user_shape_type = answers['pixel-image'];
     console.log('User shape: [' + user_shape_type + ']');
